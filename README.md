@@ -1,6 +1,26 @@
-# A Lineman JS Template using Angular
+# A Lineman JS Template using Angular *with jade*
 
 ** Supporting Lineman Version : 0.9.0 **
+
+This repo was sporked from David Mosher's [lineman-angular-template](https://github.com/davemo/lineman-angular-template).
+His original instructions are below.  If you want to learn from experience, I
+made a few mistakes, so check out my commits.
+
+Up next: I'm adding some more angular stuff to the project, like NG UI-Bootstrap.
+But in the spirit of mass-appeal and stuff, these developments will occur on another branch.
+
+## I don't always drink lineman-ade
+
+But when I do, I use jade templates.  This lineman stuff is delicious though.
+
+## This template is working, apart from the following:
+
+* TODO: create a new branch to implement Angular [UI Bootstrap](http://angular-ui.github.io/bootstrap/). I want Keep It Simple on the master branch.
+* TODO: test ngmin and minimalisation.
+* TODO: find a better intermediate folder to contain the Jade HTML output, where it can wait to be processed into a single file for reasons pertaining to awesomeness.
+* I gave up on moving homepage.us => index.jade.  Started grepping the lineman source, but how do you say - I got shtuff to do.
+
+### David Mosher's Instructions still apply
 
 This provides the basic configuration needed to get an Angular app up and running with lineman. It includes the following features:
 
