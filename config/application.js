@@ -7,10 +7,12 @@
 
 module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application', {
 
-  // configure lineman to load additional angular related npm tasks
+  // configure lineman to load additional angular & jade related npm tasks
   loadNpmTasks: [
     "grunt-angular-templates",
-    "grunt-ngmin"
+    "grunt-ngmin",
+    "grunt-contrib-jade",
+    //"grunt-contrib-clean",
   ],
 
   // we don't have handlebars templates or coffeescript by default
