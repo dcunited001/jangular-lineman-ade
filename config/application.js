@@ -56,8 +56,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
       options: {
         base: "app/templates"
       },
-      src: "app/templates/**/*.html",
-      // puts angular templates in a different spot than lineman looks for other templates in order not to conflict with the watch process
+      src: "generated/jade/**/*.tpl.html",
       dest: "generated/angular/template-cache.js"
     }
   },
