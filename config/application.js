@@ -37,6 +37,19 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
     common: ["jade", "ngtemplates"] // jade/ngtemplates runs in dist and dev
   },
 
+  // configuration for jade templates
+  // - converts jade => html
+  jade: {
+    app: {
+      options: { pretty: true },
+      expand: true,            // expand the glob
+      cwd: "app/templates",    // where the templates are contained
+      src: ["**/*.tpl.jade"],      // the files to glob
+      dest: "generated/jade/", // where the html is placed
+      ext: ".tpl.html"             // output extension
+    }
+  },
+
   // configuration for grunt-angular-templates
   ngtemplates: {
     app: { // "app" matches the name of the angular module defined in app.js
