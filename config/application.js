@@ -94,7 +94,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   watch: {
     ngtemplates: {
       files: "app/templates/**/*.html",
-      tasks: ["ngtemplates", "concat"]
+      tasks: ["jade", "ngtemplates", "concat"]
     }
   }
 
