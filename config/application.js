@@ -41,7 +41,19 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   // - converts jade => html
   jade: {
     app: {
-      options: { pretty: true },
+
+      options: {
+        pretty: true,
+        data: {
+          pkg: "<%= pkg %>"
+          // found pkg in the lineman source,
+          // - but can't figure out how js/css
+          // passed through to the templates'
+          //,css: "<%= css %>"
+          //,js: "<%= js %>"
+        }
+      },
+
       expand: true,            // expand the glob
       cwd: "app/templates",    // where the templates are contained
       src: ["**/*.tpl.jade"],      // the files to glob
