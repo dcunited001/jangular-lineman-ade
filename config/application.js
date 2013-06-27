@@ -33,8 +33,8 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
 
   // task override configuration
   prependTasks: {
-    dist: ["ngmin"],         // ngmin should run in dist only
-    common: ["ngtemplates"] // ngtemplates runs in dist and dev
+    dist: ["ngmin"],                // ngmin should run in dist only, to produce minified output (haven't tested)
+    common: ["jade", "ngtemplates"] // jade/ngtemplates runs in dist and dev
   },
 
   // configuration for grunt-angular-templates
