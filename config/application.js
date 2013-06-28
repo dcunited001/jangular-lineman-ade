@@ -93,7 +93,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   // configures grunt-watch-nospawn to listen for changes to, and recompile angular templates
   watch: {
     jade: {
-      files: "app/templates/**/*.tpl.jade",
+      files: "app/templates/**/*.jade",
       tasks: ["jade", "ngtemplates", "concat"]
     }
   }
