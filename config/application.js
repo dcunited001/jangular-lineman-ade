@@ -68,7 +68,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
       options: {
         base: "generated/jade"
       },
-      src: "generated/jade/**/*.html",
+      src: ["generated/jade/**/*.html", "vendor/templates/ui-bootstrap/**/*.html"],
       dest: "generated/angular/template-cache.js"
     }
   },
