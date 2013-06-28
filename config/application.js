@@ -56,7 +56,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
 
       expand: true,            // expand the glob
       cwd: "app/templates",    // where the templates are contained
-      src: ["**/*.tpl.jade"],      // the files to glob
+      src: ["**/*.jade"],      // the files to glob
       dest: "generated/jade/", // where the html is placed
       ext: ".tpl.html"             // output extension
     }
