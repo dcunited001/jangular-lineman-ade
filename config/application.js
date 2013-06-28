@@ -66,9 +66,9 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   ngtemplates: {
     app: { // "app" matches the name of the angular module defined in app.js
       options: {
-        base: "app/templates"
+        base: "generated/jade"
       },
-      src: "generated/jade/**/*.tpl.html",
+      src: "generated/jade/**/*.html",
       dest: "generated/angular/template-cache.js"
     }
   },
