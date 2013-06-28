@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="app">
   <head>
+
     <title><%= pkg.name %></title>
     <link rel="stylesheet" type="text/css" href="<%= css %>" media="all" />
+
   </head>
-  <body>
+  <body ng-cloak>
+
     <div class="row">
       <div class="large-12">
         <h1>A Lineman Angular Setup</h1>
