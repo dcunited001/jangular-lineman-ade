@@ -8,6 +8,8 @@ made a few mistakes, so check out my commits.
 
 Up next: I'm adding some more angular stuff to the project, like NG UI-Bootstrap.
 But in the spirit of mass-appeal and stuff, these developments will occur on another branch.
+Specifically, [this](https://github.com/dcunited001/jangular-lineman-ade/tree/ui-bootstrap) branch.
+It's still in progress, but check it out!
 
 ## I don't always drink lineman-ade
 
