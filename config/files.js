@@ -19,6 +19,8 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
   js: {
     vendor: [
       "vendor/js/angular.js",
+      "vendor/js/angular-ui-router.js",
+      "vendor/js/ui-bootstrap.js",
       "vendor/js/**/*.js"
     ],
     app: [
