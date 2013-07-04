@@ -1,5 +1,6 @@
-angular.module("app", ['ui.compat']).config(  
-  ['$stateProvider', '$routeProvider', '$urlRouterProvider',
+// for backwards compatibility, require 'ui.compat' instead of 'ui.state'
+angular.module("app", ['ui.state','ui.bootstrap']).config(  
+  [         '$stateProvider', '$routeProvider', '$urlRouterProvider',
    function ($stateProvider,   $routeProvider,   $urlRouterProvider) {
 
      $stateProvider
@@ -16,20 +17,15 @@ angular.module("app", ['ui.compat']).config(
      $urlRouterProvider.otherwise('/login');     
 
    }]).run(    
-     ['$rootScope', '$state', '$stateParams',
+     [         '$rootScope', '$state', '$stateParams',
       function ($rootScope,   $state,   $stateParams) {
 
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
 
         // adds some basic utilities to the $rootScope for debugging purposes
-        $rootScope.log = function(thing) {
-          console.log(thing);
-        };
-
-        $rootScope.alert = function(thing) {
-          alert(thing);
-        };
+        $rootScope.log   = function(thing){ console.log(thing); };
+        $rootScope.alert = function(thing){ alert(thing); };
 
       }]);
 
