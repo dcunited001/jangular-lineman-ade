@@ -1,19 +1,20 @@
-
 angular.module("app", ['ui.compat']).config(  
   ['$stateProvider', '$routeProvider', '$urlRouterProvider',
    function ($stateProvider,   $routeProvider,   $urlRouterProvider) {
 
-     $routeProvider.when('/login', {
-       templateUrl: 'angular/login.html',
-       controller: 'LoginController'
-     });
+     $stateProvider
+       .state('login', {
+         url: '/login',
+         templateUrl: 'angular/login.html',
+         controller: 'LoginCtrl' })
 
-     $routeProvider.when('/home', {
-       templateUrl: 'angular/home.html',
-       controller: 'HomeController'
-     });
+       .state('home', {
+         url: '/home',
+         templateUrl: 'angular/home.html',
+         controller: 'HomeCtrl' });
 
-//     $routeProvider.otherwise({ redirectTo: '/login' });
+     $urlRouterProvider.otherwise('/login');     
+
    }]).run(    
      ['$rootScope', '$state', '$stateParams',
       function ($rootScope,   $state,   $stateParams) {
