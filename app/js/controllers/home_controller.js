@@ -1,10 +1,10 @@
-angular.module("app").controller('HomeController', function($scope, $location, AuthenticationService) {
+angular.module("app").controller('HomeCtrl', function($scope, $state, AuthenticationService) {
   $scope.title = "Home";
   $scope.message = "Mouse Over these images to see a directive at work";
 
   var onLogoutSuccess = function(response) {
     alert(response.message);
-    $location.path('/login');
+    $state.transitionTo('login');
   };
 
   $scope.logout = function() {
