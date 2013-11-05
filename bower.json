@@ -6,6 +6,7 @@
     ".jshintrc"
   ],
   "dependencies": {
+    "underscore": "1.5.2",
     "angular": "1.2.0-rc.3",
     "angular-bootstrap": "0.6.0"
   },
