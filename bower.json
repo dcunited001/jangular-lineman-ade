@@ -1,0 +1,13 @@
+{
+  "name": "rails-stack-client",
+  "version": "0.0.1",
+  "main": "path/to/main.css",
+  "ignore": [
+    ".jshintrc"
+  ],
+  "dependencies": {
+    "angular": "1.2.0-rc.3",
+    "angular-bootstrap": "0.6.0"
+  },
+  "devDependencies": {}
+}
