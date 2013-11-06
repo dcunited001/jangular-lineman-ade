@@ -20,8 +20,8 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
     vendor: [      
       "bower_components/underscore/underscore.js",
       "bower_components/angular/angular.js",
-      "bower_components/angular-route/angular-route.js"
-      // "bower_components/ui-bootstrap.js",
+      "bower_components/angular-route/angular-route.js",
+      "bower_components/angular-bootstrap/ui-bootstrap.js"
       // "bower_components/angular-ui-router.js"
     ],
     app: [
