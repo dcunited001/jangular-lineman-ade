@@ -64,7 +64,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
 
   // configuration for grunt-angular-templates
   ngtemplates: {
-    app: { // "app" matches the name of the angular module defined in app.js
+    RailsStackApp: { // "app" matches the name of the angular module defined in app.js
       options: {
         base: "generated/jade"
       },
