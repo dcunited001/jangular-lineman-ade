@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="RailsStackApp">
   <head>
 
     <title><%= pkg.name %></title>

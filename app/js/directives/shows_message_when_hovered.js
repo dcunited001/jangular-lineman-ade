@@ -1,4 +1,4 @@
-angular.module("app").directive("showsMessageWhenHovered", function() {
+app.directive("showsMessageWhenHovered", function() {
   return function(scope, element, attributes) {
     var originalMessage = scope.message;
     element.bind("mouseenter", function() {
