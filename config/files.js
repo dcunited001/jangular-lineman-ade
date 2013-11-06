@@ -17,11 +17,11 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
   },
 
   js: {
-    vendor: [
-      "vendor/js/angular.js",
-      "vendor/js/angular-ui-router.js",
-      "vendor/js/ui-bootstrap.js",
-      "vendor/js/**/*.js"
+    vendor: [      
+      "bower_components/angular/underscore.js",
+      "bower_components/angular/angular.js",
+      // "bower_components/ui-bootstrap.js",
+      "bower_components/angular-ui-router.js"
     ],
     app: [
       "app/js/app.js",
