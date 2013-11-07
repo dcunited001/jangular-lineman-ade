@@ -8,8 +8,8 @@
   </head>
   <body ng-cloak>
 
-    <div class="row">
-      <div class="large-12">
+    <div class="row-fluid">
+      <div class="span12">
         <h1>A Lineman Angular Setup</h1>
         <div id="view" ng-view></div>
       </div>
