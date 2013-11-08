@@ -6,7 +6,6 @@
     ".jshintrc"
   ],
   "dependencies": {
-    "bootstrap": "2.3.1",
     "underscore": "1.5.2",
     "angular": "1.2.0-rc.3",
     "angular-route": "1.2.0-rc.3",
