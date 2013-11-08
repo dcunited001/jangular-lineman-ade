@@ -31,15 +31,12 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
   },
 
   less: {
-    compile: {
-      options: {
-        paths: [
-          "bower_components/bootstrap/dist/css/bootstrap.css",
-          "bower_components/bootstrap/dist/css/bootstrap-theme.css",
-          // "vendor/css/normalize.css",
-          // "vendor/css/foundation.min.css",
-          "app/css/**/*.less"]
-      }
-    }
+
+    app: [ "app/css/**/*.less" ],
+    vendor: [ 
+      "vendor/css/bootstrap.css", 
+      "vendor/css/**/*.less" 
+    ]
+
   }
 });
