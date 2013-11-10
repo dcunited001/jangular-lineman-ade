@@ -63,7 +63,7 @@
           </div><!--/.well -->
         </div><!--/span -->
 
-      <div id="view" class="span9" ng-view></div>
+      <div id="view" class="span9" ui-view></div>
 
     </div><!--/.row-fluid -->
   <footer><p>&copy; Company 2013</p></footer>
