@@ -31,6 +31,18 @@ var app = angular.module("RailsStackApp",
         controller: 'HomeCtrl'
       })
 
+      .state('explore', {
+        url: "/explore",
+        templateUrl: "angular/explore.html",
+        controller: 'HomeCtrl'
+      })
+
+      .state('features', {
+        url: "/features",
+        templateUrl: "angular/features.html",
+        controller: 'HomeCtrl'
+      })
+
       .state('error', {
         url: "/error",
         templateUrl: "angular/error.html",
