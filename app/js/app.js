@@ -5,6 +5,17 @@ var app = angular.module("RailsStackApp",
 
   .config(function($stateProvider, $urlRouterProvider) {
 
+    // states: unauthenticated
+    // home - / - prompt to signup
+    // features - /features - overview of product
+    // explore - /explore - top patches and trending vsts
+    // blog - /blog - blog posts
+
+    // states: authenticated
+    // home - / - dashboard
+    // profile - /:username
+    // account - /account
+
     $urlRouterProvider.otherwise('/login');
 
     $stateProvider
