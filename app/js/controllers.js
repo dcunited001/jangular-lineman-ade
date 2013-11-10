@@ -12,13 +12,12 @@ app.controller('HomeCtrl', function($scope, $location, AuthenticationService) {
   };
 });
 
-app.controller("AboutCtrl", function($scope, $location) {
-  // TODO: write function/template for About page
+app.controller("FeaturesCtrl", function($scope, $location) {
+  // TODO: write function/template
 });
 
-app.controller("ContactCtrl", function($scope, $location) {
-  // TODO: write function/template for Contact page
-  // TODO: ContactFormCtrl
+app.controller("ExploreCtrl", function($scope, $location) {
+  // TODO: write function/template
 });
 
 app.controller('LoginCtrl', function($scope, $location, AuthenticationService) {
