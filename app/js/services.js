@@ -1,4 +1,4 @@
-app.factory('AuthenticationService', function($http) {
+app.factory('AuthenticationService', function($http, SessionService) {
   // these routes map to stubbed API endpoints in config/server.js
   return {
     login: function(credentials) {
