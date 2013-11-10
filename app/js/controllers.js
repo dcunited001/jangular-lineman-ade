@@ -1,4 +1,4 @@
-app.controller('HomeController', function($scope, $location, AuthenticationService) {
+app.controller('HomeCtrl', function($scope, $location, AuthenticationService) {
   $scope.title = "Home";
   $scope.message = "Mouse Over these images to see a directive at work";
 
@@ -21,7 +21,7 @@ app.controller("ContactCtrl", function($scope, $location) {
   // TODO: ContactFormCtrl
 });
 
-app.controller('LoginController', function($scope, $location, AuthenticationService) {
+app.controller('LoginCtrl', function($scope, $location, AuthenticationService) {
   $scope.credentials = { username: "", password: "" };
 
   var onLoginSuccess = function(response) {
