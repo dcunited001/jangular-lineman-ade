@@ -9,3 +9,12 @@ app.factory('AuthenticationService', function($http) {
     }
   };
 });
+
+app.factory('SessionService', function () {
+
+  'use strict';
+
+  return {
+    currentUser: null
+  };
+});
