@@ -26,3 +26,10 @@ app.directive('navbarWidget', function() {
     templateUrl: 'angular/directives/navbar-widget.html' 
   };
 });
+
+app.directive('sidebarWidget', function() {
+  return {
+    controller: "SidebarCtrl",
+    templateUrl: 'angular/directives/sidebar-widget.html'
+  };
+});
