@@ -1,9 +1,36 @@
+/*
+Role Based Auth for Angular 
+  http://arthur.gonigberg.com/2013/06/29/angularjs-role-based-auth/
+  https://github.com/artgon/angularjs-role-based-auth
+
+AngularJS Navigation 
+  https://ryankaskel.com/blog/2013/05/27/a-different-approach-to-angularjs-navigation-menus
+
+Transclude in AngularJS 
+  http://blog.omkarpatil.com/2012/11/transclude-in-angularjs.html
+
+Angular-Strap (not part of UI project) 
+  http://mgcrea.github.io/angular-strap/#/tooltip
+
+Popular Angular Modules
+  http://ngmodules.org/
+
+File Upload for Angular JS
+  http://ngmodules.org/modules/angular-file-upload
+
+Combining Directives and Controllers
+  http://icelab.com.au/articles/an-all-in-one-directive-controller-with-angularjs/
+*/
+
 var app = angular.module("RailsStackApp", 
                          ['ngRoute',
                           'ui.bootstrap',
                           'ui.router'])
 
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function($stateProvider, 
+                   $urlRouterProvider) {
+
+    'use strict';
 
     // states: unauthenticated
     // home - / - prompt to signup
@@ -52,7 +79,11 @@ var app = angular.module("RailsStackApp",
   })
 
   .run(function($rootScope, $location, AuthenticationService, SessionService) {
-    // adds some basic utilities to the $rootScope for debugging purposes
+
+    //==================
+    // debugging
+    //==================
+
     $rootScope.log = function(thing) {
       console.log(thing);
     };
@@ -60,5 +91,28 @@ var app = angular.module("RailsStackApp",
     $rootScope.alert = function(thing) {
       alert(thing);
     };
+
+    //==================
+    // authentication
+    //==================
+    var routesThatDontRequireAuth = ['/login', '/home', '/features', '/explore'];
+
+    // check if current location matches route  
+    var routeClean = function (route) {
+      return _.find(routesThatDontRequireAuth,
+                    function (noAuthRoute) {
+                      return _.str.startsWith(route, noAuthRoute);
+                    });
+    };
+
+  $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
+    // if route requires auth and user is not logged in
+    if (!routeClean($location.url()) && !AuthenticationService.isLoggedIn()) {
+      // redirect back to login
+      ev.preventDefault();
+      $location.path('/login');
+    }
+
   });
 
+  });
