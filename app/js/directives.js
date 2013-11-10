@@ -11,3 +11,9 @@ app.directive("showsMessageWhenHovered", function() {
     });
   };
 });
+
+app.directive('userProfileWidget', function() {
+  return function(scope, element, attributes) {
+    // TODO: userProfileWidget
+  };
+});
