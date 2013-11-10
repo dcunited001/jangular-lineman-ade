@@ -35,6 +35,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
     app: [ "app/css/**/*.less" ],
     vendor: [ 
       "vendor/css/bootstrap.css", 
+      "vendor/css/bootstrap-responsive.css", 
       "vendor/css/**/*.less" 
     ]
 
