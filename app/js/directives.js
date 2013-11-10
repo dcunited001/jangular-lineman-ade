@@ -21,7 +21,8 @@ app.directive('userProfileWidget', function() {
 });
 
 app.directive('navbarWidget', function() {
-  return function(scope, element, attributes) {
-    // TODO: link function?
+  return {
+    controller: 'NavbarCtrl',
+    templateUrl: 'angular/directives/navbar-widget.html' 
   };
 });

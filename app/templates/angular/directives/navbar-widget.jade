@@ -1,0 +1,15 @@
+.navbar-inner
+  .container-fluid
+      button.btn.btn-navbar(type='button', data-toggle='collapse', data-target='.nav-collapse')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.brand(href='#') Angular Rails
+      .nav-collapse.collapse
+        ul.nav
+          li(ng-class='{ active: isActive(\'/home\') }')
+            a(href='#/home') Home
+          li(ng-class='{ active: isActive(\'/features\') }')
+            a(href='#/features') Features
+          li(ng-class='{ active: isActive(\'/explore\') }')
+            a(href='#/explore') Explore
