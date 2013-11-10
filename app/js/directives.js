@@ -14,6 +14,13 @@ app.directive("showsMessageWhenHovered", function() {
 
 app.directive('userProfileWidget', function() {
   return function(scope, element, attributes) {
-    // TODO: userProfileWidget
+    // TODO: link function?
   };
 });
+
+app.directive('navbarWidget', function() {
+  return function(scope, element, attributes) {
+    // TODO: link function?
+  };
+});
+
