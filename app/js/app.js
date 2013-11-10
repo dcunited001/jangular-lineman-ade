@@ -3,23 +3,32 @@ var app = angular.module("RailsStackApp",
                           'ui.bootstrap',
                           'ui.router'])
 
-  .config(function($routeProvider) {
+  .config(function($stateProvider, $urlRouterProvider) {
 
-    $routeProvider.when('/login', {
-      templateUrl: 'angular/login.html',
-      controller: 'LoginController'
-    });
+    $urlRouterProvider.otherwise('/login');
 
-    $routeProvider.when('/home', {
-      templateUrl: 'angular/home.html',
-      controller: 'HomeController'
-    });
+    $stateProvider
+      .state('login', {
+        url: "/login",
+        templateUrl: "angular/login.html",
+        controller: 'LoginCtrl'
+      })
 
-    $routeProvider.otherwise({ redirectTo: '/login' });
+      .state('home', {
+        url: "/home",
+        templateUrl: "angular/home.html",
+        controller: 'HomeCtrl'
+      })
+
+      .state('error', {
+        url: "/error",
+        templateUrl: "angular/error.html",
+        controller: 'HomeCtrl'
+      });
 
   })
 
-  .run(function($rootScope) {
+  .run(function($rootScope, $location, AuthenticationService, SessionService) {
     // adds some basic utilities to the $rootScope for debugging purposes
     $rootScope.log = function(thing) {
       console.log(thing);
