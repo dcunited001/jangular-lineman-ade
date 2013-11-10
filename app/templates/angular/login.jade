@@ -1,17 +1,19 @@
+.row-fluid
+  h1 Login
+
 .row-fluid#login
-  .span6 
-  
+  form(ng-submit="login()")
+    fieldset.radius
+      .row-fluid
+        .span3
+        .span3
+          input(type="text", name="username", placeholder="username", ng-model="credentials.username", required)
+        .span3
+          input(type="password", name="password", placeholder="password", ng-model="credentials.password", required)
+        .span3
 
-    form(ng-submit="login()")
-      fieldset.radius
-        .row
-
-          .large-6.columns
-            input(type="text", name="username", placeholder="username", ng-model="credentials.username", required)
-
-          .large-6.columns
-            input(type="password", name="password", placeholder="password", ng-model="credentials.password", required)
-
-        .row
-          .large-12.columns
-            button.button.large.expand.radius(type="submit") Login
+      .row-fluid
+        .span3
+        .span6
+          button.button.large.expand.radius(type="submit") Login
+        .span3

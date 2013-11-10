@@ -1,16 +1,15 @@
-#home
-  .row-fluid
-    .span6
-      h2 Welcome to the {{title}} page!
-    .span6
-      .alert-box {{message}}
+.hero-unit
+  h1 Welcome to the {{title}} page!
 
-  .row-fluid
-    .span6
-      ul
-        li: img.th(src="img/demo1.jpg", shows-message-when-hovered, message="Im the first house.")
-        li: img.th(src="img/demo2.jpg", shows-message-when-hovered, message="Im the second house.")
+.row-fluid
+  .span4
+    img.th(src="img/demo1.jpg", shows-message-when-hovered, message="Im the first house.")
 
-  .row-fluid
-    .span12
-       button.button.large.expand.radius(ng-click="logout()") Log Out
+  .span4
+    p   
+      {{message}}
+
+  .span4
+    img.th(src="img/demo2.jpg", shows-message-when-hovered, message="Im the second house.")
+
+//button.button.large.expand.radius(ng-click="logout()") Log Out
