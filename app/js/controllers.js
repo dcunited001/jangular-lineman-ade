@@ -12,6 +12,12 @@ app.controller('HomeCtrl', function($scope, $location, AuthenticationService) {
   };
 });
 
+app.controller("NavbarCtrl", function($scope, $location) {
+  $scope.isActive = function(viewLocation) {
+    return viewLocation === $location.path();
+  };
+});
+
 app.controller("FeaturesCtrl", function($scope, $location) {
   // TODO: write function/template
 });
