@@ -4,6 +4,8 @@
 
     <title><%= pkg.name %></title>
     <link rel="stylesheet" type="text/css" href="<%= css %>" media="all" />
+    <link rel="icon" type="image/png" href="/img/favicon.ico"/>
+
 
   </head>
   <body ng-cloak>
