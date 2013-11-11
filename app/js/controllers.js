@@ -26,14 +26,6 @@ app.controller("SidebarCtrl", function($scope, $location) {
   // };
 });
 
-app.controller("FeaturesCtrl", function($scope, $location) {
-  // TODO: write function/template
-});
-
-app.controller("ExploreCtrl", function($scope, $location) {
-  // TODO: write function/template
-});
-
 app.controller('LoginCtrl', function($scope, $location, AuthenticationService) {
   $scope.credentials = { username: "", password: "" };
 
