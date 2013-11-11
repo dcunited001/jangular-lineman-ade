@@ -3,6 +3,9 @@ Role Based Auth for Angular
   http://arthur.gonigberg.com/2013/06/29/angularjs-role-based-auth/
   https://github.com/artgon/angularjs-role-based-auth
 
+Angular Auth Example
+  https://github.com/fnakstad/angular-client-side-auth
+
 AngularJS Navigation 
   https://ryankaskel.com/blog/2013/05/27/a-different-approach-to-angularjs-navigation-menus
 
@@ -24,6 +27,7 @@ Combining Directives and Controllers
 
 var app = angular.module("RailsStackApp", 
                          ['ngRoute',
+                          'ngCookies',
                           'ui.bootstrap',
                           'ui.router'])
 
