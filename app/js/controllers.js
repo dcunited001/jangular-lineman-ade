@@ -41,7 +41,14 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
 
   $scope.openLoginModal = function() {
 
+    var modalInstance = $modal.open({
+      templateUrl: 'angular/modals/login-modal.html',
+      controller: 'LoginModalCtrl'
+    });
+
+    //modalInstance.result.then(...)
   };
+
 });
 
 app.controller("SignupModalCtrl", function($scope, $modalInstance) {
@@ -52,6 +59,16 @@ app.controller("SignupModalCtrl", function($scope, $modalInstance) {
   $scope.cancel = function() {
     $modalInstance.dismiss('cancel');
   };
+});
+
+app.controller("LoginModalCtrl", function($scope, $modalInstance) {
+  $scope.ok = function() {
+    $modalInstance.close('return val');
+  }
+
+  $scope.cancel = function() {
+    $modalInstance.dismiss('cancel');
+  }
 });
 
 app.controller("SidebarCtrl", function($scope, $location) {
