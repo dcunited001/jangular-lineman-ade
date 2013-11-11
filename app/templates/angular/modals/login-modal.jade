@@ -1,11 +1,9 @@
 .modal-header
-    h3 Login Modal
-    .modal-body
-      ul
-        li(ng-repeat='item in [\'foo\', \'bar\', \'baz\']')
-          a(ng-click='selected.item = item') {{ item }}
-      | Selected:
-      b {{ selected.item }}
-    .modal-footer
-      button.btn.btn-primary(ng-click='ok()') OK
-      button.btn.btn-warning(ng-click='cancel()') Cancel
+  h3 Log In
+  .modal-body
+    .row-fluid
+      .span6: input(type="text", name="username", placeholder="username", ng-model="credentials.username", required)
+      .span6: input(type="password", name="password", placeholder="password", ng-model="credentials.password", required)
+  .modal-footer
+    .pull-right: button.btn.btn-primary(ng-click='ok()') Log In
+    .pull-left:  button.btn(ng-click='cancel()') Cancel
