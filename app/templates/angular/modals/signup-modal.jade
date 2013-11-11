@@ -1,0 +1,11 @@
+.modal-header
+    h3 I'm a modal!
+    .modal-body
+      ul
+        li(ng-repeat='item in [\'foo\', \'bar\', \'baz\']')
+          a(ng-click='selected.item = item') {{ item }}
+      | Selected:
+      b {{ selected.item }}
+    .modal-footer
+      button.btn.btn-primary(ng-click='ok()') OK
+      button.btn.btn-warning(ng-click='cancel()') Cancel
