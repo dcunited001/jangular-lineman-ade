@@ -1,11 +1,11 @@
 .modal-header
-    h3 Signup Modal
-    .modal-body
-      ul
-        li(ng-repeat='item in [\'foo\', \'bar\', \'baz\']')
-          a(ng-click='selected.item = item') {{ item }}
-      | Selected:
-      b {{ selected.item }}
-    .modal-footer
-      button.btn.btn-primary(ng-click='ok()') OK
-      button.btn.btn-warning(ng-click='cancel()') Cancel
+  h3 Sign Up
+  .modal-body
+    input(type="text", name="email", placeholder="email", ng-model="signup.email", required)
+    input(type="text", name="username", placeholder="username", ng-model="signup.username", required)
+    input(type="password", name="password", placeholder="password", ng-model="signup.password", required)
+    input(type="password", name="passwordConfirmation", placeholder="confirm", ng-model="signup.passwordConfirmation", required)
+
+  .modal-footer
+    .pull-right: button.btn.btn-primary(ng-click='ok()') Sign Up
+    .pull-left: button.btn(ng-click='cancel()') Cancel
