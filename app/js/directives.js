@@ -17,7 +17,7 @@ app.directive("showsMessageWhenHovered", function() {
 app.directive('signupLoginWidget', function() {
   return {
     templateUrl: 'angular/directives/signup-login-widget.html'
-  }
+  };
 });
 
 app.directive('userProfileWidget', function() {
