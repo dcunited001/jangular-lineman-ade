@@ -12,10 +12,12 @@ app.controller('HomeCtrl', function($scope, $location, AuthenticationService) {
   };
 });
 
-app.controller("NavbarCtrl", function($scope, $location) {
+app.controller("NavbarCtrl", function($scope, $location, AuthenticationService, SessionService) {
   $scope.isActive = function(viewLocation) {
     return viewLocation === $location.path();
   };
+  $scope.currentUser = SessionService.currentUser;
+  $scope.loggedIn = AuthenticationService.isLoggedIn();
 });
 
 app.controller("SidebarCtrl", function($scope, $location) {
@@ -43,4 +45,5 @@ app.controller('LoginCtrl', function($scope, $location, AuthenticationService) {
   $scope.login = function() {
     AuthenticationService.login($scope.credentials).success(onLoginSuccess);
   };
+
 });
