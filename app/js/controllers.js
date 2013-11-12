@@ -52,6 +52,7 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
 });
 
 app.controller("SignupModalCtrl", function($scope, $modalInstance) {
+  //TODO: form validation
   $scope.ok = function() {
     $modalInstance.close('return val');
   };
@@ -62,13 +63,15 @@ app.controller("SignupModalCtrl", function($scope, $modalInstance) {
 });
 
 app.controller("LoginModalCtrl", function($scope, $modalInstance) {
+  //TODO: form validation
+  //TODO: consolidate and use same controller for modal & page?
   $scope.ok = function() {
     $modalInstance.close('return val');
-  }
+  };
 
   $scope.cancel = function() {
     $modalInstance.dismiss('cancel');
-  }
+  };
 });
 
 app.controller("SidebarCtrl", function($scope, $location) {
