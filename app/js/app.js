@@ -3,6 +3,11 @@ Role Based Auth for Angular
   http://arthur.gonigberg.com/2013/06/29/angularjs-role-based-auth/
   https://github.com/artgon/angularjs-role-based-auth
 
+Devise Auth with Rails/Angular
+  http://jes.al/2013/08/authentication-with-rails-devise-and-angularjs/
+  https://github.com/jesalg/RADD
+  https://github.com/colindensem/demo-rails-angularjs
+
 Angular Auth Example
   https://github.com/fnakstad/angular-client-side-auth
 
