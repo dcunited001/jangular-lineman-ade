@@ -1,6 +1,7 @@
 var app = angular.module("RailsStackApp", 
                          ['ngRoute',
                           'ngCookies',
+                          'ngResource',
                           'ui.bootstrap',
                           'ui.router'])
 
@@ -80,7 +81,7 @@ var app = angular.module("RailsStackApp",
       return function(promise) {
         return promise.then(success, error);
       };
-    }
+    };
     $httpProvider.responseInterceptors.push(interceptor);
   })
 
