@@ -107,11 +107,11 @@ var app = angular.module("RailsStackApp",
       return function(promise) {
         return promise.then(success, error);
       };
-    }];
+    }
     $httpProvider.responseInterceptors.push(interceptor);
   })
 
-  .run(function($rootScope, $location, AuthenticationService, SessionService) {
+  .run(function($rootScope, $location, AuthenticationService, SessionService, $cookies) {
 
     //==================
     // debugging
