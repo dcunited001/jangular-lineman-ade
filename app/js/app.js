@@ -87,10 +87,15 @@ var app = angular.module("RailsStackApp",
 
   })
 
-  .config(function($httpProvider){
-    $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+  .config(function($httpProvider, $locationProvider){
+    $locationProvider.html5Mode(true);
 
-    var interceptor = ['$location', '$rootScope', '$q', function($location, $rootScope, $q) {
+    // if (angular.element('meta[name=csrf-token]')) 
+    // {
+    //   $httpProvider.defaults.headers.common['X-CSRF-Token'] = angular.element('meta[name=csrf-token]').attr('content');
+    // }
+    
+    var interceptor = function($location, $rootScope, $q) {
       function success(response) {
         return response;
       }
