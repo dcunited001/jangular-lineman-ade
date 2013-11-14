@@ -8,15 +8,15 @@
 module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application', {
 
   // api proxy server configuration to link up with rails-api
-  // server: {
-  //   pushState: true,
-  //   apiProxy: {
-  //     enabled: true,
-  //     host: 'localhost',
-  //     port: 3000,
-  //     prefix: 'api'
-  //   }
-  // },
+  server: {
+    pushState: true,
+    apiProxy: {
+      enabled: true,
+      host: 'localhost',
+      port: 3000,
+      prefix: 'api'
+    }
+  },
 
   // configure lineman to load additional angular & jade related npm tasks
   loadNpmTasks: [
