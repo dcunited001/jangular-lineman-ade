@@ -1,35 +1,3 @@
-/*
-Role Based Auth for Angular 
-  http://arthur.gonigberg.com/2013/06/29/angularjs-role-based-auth/
-  https://github.com/artgon/angularjs-role-based-auth
-
-Devise Auth with Rails/Angular
-  http://jes.al/2013/08/authentication-with-rails-devise-and-angularjs/
-  https://github.com/jesalg/RADD
-  https://github.com/colindensem/demo-rails-angularjs
-
-Angular Auth Example
-  https://github.com/fnakstad/angular-client-side-auth
-
-AngularJS Navigation 
-  https://ryankaskel.com/blog/2013/05/27/a-different-approach-to-angularjs-navigation-menus
-
-Transclude in AngularJS 
-  http://blog.omkarpatil.com/2012/11/transclude-in-angularjs.html
-
-Angular-Strap (not part of UI project) 
-  http://mgcrea.github.io/angular-strap/#/tooltip
-
-Popular Angular Modules
-  http://ngmodules.org/
-
-File Upload for Angular JS
-  http://ngmodules.org/modules/angular-file-upload
-
-Combining Directives and Controllers
-  http://icelab.com.au/articles/an-all-in-one-directive-controller-with-angularjs/
-*/
-
 var app = angular.module("RailsStackApp", 
                          ['ngRoute',
                           'ngCookies',
