@@ -12,16 +12,37 @@ app.controller('HomeCtrl', function($scope, $location, AuthenticationService) {
   };
 });
 
-app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationService, SessionService, RegistrationService) {
+app.controller("AlertCtrl", function($scope) {
+  //TODO: AlertCtrl template
+  //TODO: alerts directive?
+  //TODO: add handler for event:unauthorized (from authentication interceptor)
+  $scope.alerts = [
+    { type: 'error', msg: 'Oh snap! Change a few things up and try submitting again.' }, 
+    { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
+  ];
+
+  $scope.addAlert = function() {
+    $scope.alerts.push({msg: "Another alert!"});
+  };
+
+  $scope.closeAlert = function(index) {
+    $scope.alerts.splice(index, 1);
+  };
+
+});
+
+app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationService, SessionService) {
+
   $scope.isActive = function(viewLocation) {
     return viewLocation === $location.path();
   };
   $scope.currentUser = SessionService.currentUser;
   $scope.loggedIn = AuthenticationService.isLoggedIn();
 
-  // model defaults
+});
+
+app.controller('SignupBtnCtrl', function($scope, $modal, RegistrationService) {
   $scope.signup = { username: '', email: '', password: '', passwordConfirmation: '' };
-  $scope.creds  = { username: '', password: '' }
 
   $scope.openSignupModal = function() {
 
@@ -41,13 +62,21 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
                                    //TODO: signup success callback: alert(response); 
                                  },
                                  function(response) {
+                                   if (response.status === 422) {
+                                     
+                                   }
                                    //TODO: signup error callback: 
                                  });
     }, function (message) {
       //TODO: cancel function
     });
- 
+    
   };
+
+});
+
+app.controller("LoginBtnCtrl", function($scope, $modal, AuthenticationService) {
+  $scope.creds  = { username: '', password: '' };
 
   $scope.openLoginModal = function() {
 
@@ -55,7 +84,7 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
       templateUrl: 'angular/modals/login-modal.html',
       controller: 'LoginModalCtrl',
       resolve: {
-        login: function() {
+        creds: function() {
           return $scope.creds;
         }
       }
@@ -64,22 +93,23 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
     modalInstance.result.then(function (creds) {
       AuthenticationService.login(creds,
                                   function(response) {
-                                  
+                                    
                                   },
                                   function(response) {
-
+                                    
                                   });
 
     });
 
   };
-
+  
 });
 
 app.controller("SignupModalCtrl", function($scope, $modalInstance, signup, RegistrationService) {
+  //TODO: alerts
+
   $scope.ok = function() {
     //TODO: client-side validation
-    
     $modalInstance.close($scope.signup);
   };
 
@@ -88,9 +118,15 @@ app.controller("SignupModalCtrl", function($scope, $modalInstance, signup, Regis
   };
 });
 
-app.controller("LoginModalCtrl", function($scope, $modalInstance, AuthenticationService) {
+app.controller("LoginModalCtrl", function($scope, $modalInstance, AuthenticationService, Users) {
+  $scope.$on('event:unauthorized', function() {
+    //$scope.alerts
+    //$modalInstance.open
+  });
+
   //TODO: consolidate and use same controller for modal & page?
   $scope.ok = function() {
+    Users.query();
     $modalInstance.close($scope.login);
   };
 
@@ -108,13 +144,17 @@ app.controller("SidebarCtrl", function($scope, $location) {
 app.controller('LoginCtrl', function($scope, $location, AuthenticationService) {
   $scope.credentials = { username: "", password: "" };
 
-  var onLoginSuccess = function(response) {
-    alert(response.message);
+  var onLoginSuccess = function(res) {
+    alert(res.message);
     $location.path('/home');
   };
 
+  var onLoginFailure = function(res) {
+    alert(res.message);
+  };
+
   $scope.login = function() {
-    AuthenticationService.login($scope.credentials).success(onLoginSuccess);
+    AuthenticationService.login($scope.credentials, onLoginSuccess, onLoginFailure);
   };
 
 });
