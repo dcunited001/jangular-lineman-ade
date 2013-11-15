@@ -6,6 +6,7 @@ var app = angular.module("RailsStackApp",
                           'ui.router'])
 
   .config(function($stateProvider, 
+                   $locationProvider,
                    $urlRouterProvider) {
 
     'use strict';
@@ -20,6 +21,8 @@ var app = angular.module("RailsStackApp",
     // home - / - dashboard
     // profile - /:username
     // account - /account
+
+    $locationProvider.html5Mode(true);
 
     $urlRouterProvider.otherwise('/login');
 
@@ -56,8 +59,7 @@ var app = angular.module("RailsStackApp",
 
   })
 
-  .config(function($httpProvider, $locationProvider){
-    $locationProvider.html5Mode(true);
+  .config(function($httpProvider){
 
     // if (angular.element('meta[name=csrf-token]')) 
     // {
