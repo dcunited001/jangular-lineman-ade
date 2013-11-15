@@ -105,7 +105,9 @@ Communicating between Factory Services
 
 Broadcasting events from directives
 
+- http://www.yearofmoo.com/2012/10/more-angularjs-magic-to-supercharge-your-webapp.html#communication-between-services-and-controllers
 - http://stackoverflow.com/questions/16199212/angularjs-broadcast-event-from-directive
+- http://jsfiddle.net/simpulton/XqDxG/
 
 ngResource
 
