@@ -65,26 +65,27 @@ var app = angular.module("RailsStackApp",
     // {
     //   $httpProvider.defaults.headers.common['X-CSRF-Token'] = angular.element('meta[name=csrf-token]').attr('content');
     // }
-    
-    var interceptor = function($location, $rootScope, $q) {
-      function success(response) {
-        return response;
-      }
 
-      function error(response) {
-        if (response.status === 401) {
-          $rootScope.$broadcast('event:unauthorized');
-          $location.path('/users/login');
-          return response;
-        }
-        return $q.reject(response);
-      }
+  //TODO: fix http interceptor, success/error functions seem to be overriding other callbacks
+  //   var interceptor = function($location, $rootScope, $q) {
+  //     function success(response) {
+  //       return response;
+  //     }
 
-      return function(promise) {
-        return promise.then(success, error);
-      };
-    };
-    $httpProvider.responseInterceptors.push(interceptor);
+  //     function error(response) {
+  //       if (response.status === 401) {
+  //         $rootScope.$broadcast('event:unauthorized');
+  //         $location.path('/users/login');
+  //         return response;
+  //       }
+  //       return $q.reject(response);
+  //     }
+
+  //     return function(promise) {
+  //       return promise.then(success, error);
+  //     };
+  //   };
+  //   $httpProvider.responseInterceptors.push(interceptor);
   })
 
   .run(function($rootScope, $location, AuthenticationService, SessionService, $cookies) {
