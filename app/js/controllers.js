@@ -36,7 +36,9 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
   $scope.isActive = function(viewLocation) {
     return viewLocation === $location.path();
   };
-  $scope.currentUser = SessionService.currentUser;
+
+  //TODO: bind to remove function?
+  $scope.currentUser = function() { return SessionService.currentUser };
   $scope.loggedIn = AuthenticationService.isLoggedIn;
 
   //TODO: refactor to SignupBtnCtrl, but $scope.signup is not passed when i do this
@@ -60,7 +62,7 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
       RegistrationService.signup(signup, 
                                  function(res) { 
                                    //TODO: signup success callback: 
-                                   alert(res); 
+                                   alert('great success'); 
                                  },
                                  function(res) {
                                    //TODO: gotta be a better way to handle these errors
