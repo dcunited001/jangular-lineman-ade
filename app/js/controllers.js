@@ -31,17 +31,15 @@ app.controller("AlertCtrl", function($scope) {
 
 });
 
-app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationService, SessionService) {
+app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationService, SessionService, RegistrationService) {
 
   $scope.isActive = function(viewLocation) {
     return viewLocation === $location.path();
   };
   $scope.currentUser = SessionService.currentUser;
-  $scope.loggedIn = AuthenticationService.isLoggedIn();
+  $scope.loggedIn = AuthenticationService.isLoggedIn;
 
-});
-
-app.controller('SignupBtnCtrl', function($scope, $modal, RegistrationService) {
+  //TODO: refactor to SignupBtnCtrl, but $scope.signup is not passed when i do this
   $scope.signup = { username: '', email: '', password: '', passwordConfirmation: '' };
 
   $scope.openSignupModal = function() {

@@ -13,8 +13,8 @@
           a(href='/features') Features
         li(ng-class='{ active: isActive(\'/explore\') }')
           a(href='/explore') Explore
-    .pull-right(ng-if="loggedIn")
+    .pull-right(ng-if="loggedIn()")
       .btn-group(user-profile-widget)
-    .pull-right(ng-if="!(loggedIn)")
+    .pull-right(ng-if="!(loggedIn())")
       .btn-group(signup-login-widget)
         
