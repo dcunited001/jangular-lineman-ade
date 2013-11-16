@@ -18,14 +18,17 @@ app.factory('AuthenticationService', function($http, SessionService) {
 
       // this method could be used to call the API and set the user 
       //   instead of taking it in the function params
-      SessionService.currentUser = credentials.username;
+      //SessionService.currentUser = credentials.username;
       
-      return $http.post('/api/', credentials)
-        .then(success, error);
+      return $http.post('/api/login.json', { 
+        user: credentials
+      }).then(success, error);
     },
 
     logout: function(success, error) {
-      return $http.post('/logout').then(cb);
+      return $http.post('/api/logout.json', { 
+        format: 'json'
+      }).then(success, error);
     },
 
     isLoggedIn: function () {
