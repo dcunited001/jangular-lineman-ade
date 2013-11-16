@@ -37,8 +37,10 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
     return viewLocation === $location.path();
   };
 
-  //TODO: bind to remove function?
-  $scope.currentUser = function() { return SessionService.currentUser };
+  //TODO: bind to remove function? (currentUser & loggedIn)
+  if ($scope.currentUser === undefined) {
+    $scope.currentUser = SessionService.currentUser;
+  }
   $scope.loggedIn = AuthenticationService.isLoggedIn;
 
   //TODO: refactor to SignupBtnCtrl, but $scope.signup is not passed when i do this
@@ -102,7 +104,7 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
       $scope.loginAlerts = [];
       AuthenticationService.login(creds,
                                   function(res) {
-                                    alert('great success');
+                                    $scope.currentUser = SessionService.currentUser;
                                   },
                                   function(res) {
                                     $scope.loginAlerts.push({ type: "error", msg: res.error });
