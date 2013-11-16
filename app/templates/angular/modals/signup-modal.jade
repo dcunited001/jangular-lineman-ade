@@ -1,5 +1,7 @@
-.modal-header
-  h3 Sign Up
+form(ng-submit="ok()")
+  .modal-header
+    h3 Sign Up {{signup.email}}
+
   .modal-body
     input(type="text", name="email", placeholder="email", ng-model="signup.email", required)
     input(type="text", name="username", placeholder="username", ng-model="signup.username", required)
@@ -7,5 +9,5 @@
     input(type="password", name="passwordConfirmation", placeholder="confirm", ng-model="signup.passwordConfirmation", required)
 
   .modal-footer
-    .pull-right: button.btn.btn-primary(ng-click='ok()') Sign Up
+    .pull-right: button.btn.btn-primary(type="submit") Sign Up
     .pull-left: button.btn(ng-click='cancel()') Cancel
