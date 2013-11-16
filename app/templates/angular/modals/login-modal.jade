@@ -4,6 +4,9 @@ form(ng-submit="ok()")
 
   .modal-body
     .row-fluid
+      alert(ng-repeat="alert in alerts", type="alert.type", close="closeAlert($index)")
+        {{alert.msg}}
+    .row-fluid
       .span6: input(type="text", name="username", placeholder="Email", ng-model="creds.email", required)
       .span6: input(type="password", name="password", placeholder="Password", ng-model="creds.password", required)
 
