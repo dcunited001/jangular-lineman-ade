@@ -4,7 +4,8 @@ app.factory('RegistrationService', function($http) {
   return {
     signup: function(params, success, error) {
       return $http.post('/api/users.json', { user: params })
-        .then(success, error);
+        .success(success)
+        .error(error);
     }
   };
 });
