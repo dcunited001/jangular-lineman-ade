@@ -1,12 +1,16 @@
 form(ng-submit="ok()")
   .modal-header
-    h3 Sign Up {{signup.email}}
+    h3 Sign Up
 
   .modal-body
     input(type="text", name="email", placeholder="Email", ng-model="signup.email", required)
     input(type="text", name="username", placeholder="Username", ng-model="signup.username", required)
     input(type="password", name="password", placeholder="Password", ng-model="signup.password", required)
     input(type="password", name="passwordConfirmation", placeholder="Confirm", ng-model="signup.passwordConfirmation", required)
+      
+    .row-fluid
+      alert(ng-repeat="alert in signupAlerts", type="alert.type", close="closeAlert($index)")
+        {{alert.msg}}
 
   .modal-footer
     .pull-right: button.btn.btn-primary(type="submit") Sign Up
