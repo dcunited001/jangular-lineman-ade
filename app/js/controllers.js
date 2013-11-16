@@ -12,25 +12,6 @@ app.controller('HomeCtrl', function($scope, $location, AuthenticationService) {
   };
 });
 
-app.controller("AlertCtrl", function($scope) {
-  //TODO: AlertCtrl template
-  //TODO: alerts directive?
-  //TODO: add handler for event:unauthorized (from authentication interceptor)
-  $scope.alerts = [
-    { type: 'error', msg: 'Oh snap! Change a few things up and try submitting again.' }, 
-    { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
-  ];
-
-  $scope.addAlert = function() {
-    $scope.alerts.push({msg: "Another alert!"});
-  };
-
-  $scope.closeAlert = function(index) {
-    $scope.alerts.splice(index, 1);
-  };
-
-});
-
 app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationService, SessionService, RegistrationService) {
 
   $scope.isActive = function(viewLocation) {
