@@ -114,7 +114,10 @@ app.controller("SignupModalCtrl", function($scope, $modalInstance, signup, Regis
   };
 });
 
-app.controller("LoginModalCtrl", function($scope, $modalInstance, AuthenticationService, Users) {
+app.controller("LoginModalCtrl", function($scope, $modalInstance, creds, AuthenticationService, Users) {
+  //TODO: alerts/validation errors
+  //TODO: fix white at bottom of modal bc of form
+
   $scope.$on('event:unauthorized', function() {
     //$scope.alerts
     //$modalInstance.open
@@ -122,8 +125,8 @@ app.controller("LoginModalCtrl", function($scope, $modalInstance, Authentication
 
   //TODO: consolidate and use same controller for modal & page?
   $scope.ok = function() {
-    Users.query();
-    $modalInstance.close($scope.login);
+    //Users.query();
+    $modalInstance.close(creds);
   };
 
   $scope.cancel = function() {
