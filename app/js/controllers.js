@@ -173,3 +173,7 @@ app.controller('LoginCtrl', function($scope, $location, AuthenticationService) {
   };
 
 });
+
+app.controller('UsersIndexCtrl', function($scope, Users) {
+  $scope.users = Users.query();
+});

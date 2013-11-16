@@ -56,6 +56,14 @@ var app = angular.module("RailsStackApp",
         url: "/error",
         templateUrl: "angular/error.html",
         controller: 'HomeCtrl'
+      })
+
+    // authenticated routes
+
+      .state('usersIndex', {
+        url: "/users",
+        templateUrl: "angular/users.html",
+        controller: "UsersIndexCtrl"
       });
 
   })
@@ -106,7 +114,7 @@ var app = angular.module("RailsStackApp",
     //==================
     // authentication
     //==================
-    var routesThatDontRequireAuth = ['/login', '/home', '/features', '/explore'];
+    var routesThatDontRequireAuth = ['/login', '/home', '/features', '/explore', '/error'];
 
     // check if current location matches route  
     var routeClean = function (route) {
