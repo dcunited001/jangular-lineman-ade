@@ -82,6 +82,7 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
 
   //TODO: refactor to LoginBtnCtrl, but $scope.creds is not passed when i do this
   $scope.creds  = { email: '', password: '' };
+  $scope.loginAlerts = [];
   $scope.openLoginModal = function() {
 
     var modalInstance = $modal.open({
@@ -95,12 +96,14 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
     });
 
     modalInstance.result.then(function (creds) {
+      $scope.loginAlerts = [];
       AuthenticationService.login(creds,
-                                  function(response) {
-                                    
+                                  function(res) {
+                                    alert('great success');
                                   },
-                                  function(response) {
-                                    
+                                  function(res) {
+                                    $scope.loginAlerts.push({ type: "error", msg: res.error });
+                                    $scope.openLoginModal();
                                   });
 
     });
