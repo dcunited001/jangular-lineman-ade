@@ -16,13 +16,15 @@ app.factory('AuthenticationService', function($http, SessionService) {
   // these routes map to stubbed API endpoints in config/server.js
   return {
     login: function(creds, success, error) {
-
       return $http.post('/api/login.json', { 
         user: creds
-      }).then(function(res) {
+      }).success(function(res) {
         SessionService.currentUser = creds.email;
         success(res);
-      }, error);
+      }).error(function(res) {
+        SessionService.currentUser = null;
+        error(res);
+      });
     },
 
     logout: function(success, error) {
