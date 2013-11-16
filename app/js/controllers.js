@@ -63,7 +63,7 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
       $scope.signupAlerts = [];
       RegistrationService.signup(signup, 
                                  function(res) { 
-                                   //TODO: signup success callback: 
+                                   //TODO: show alert somewhere .. or another modal?
                                    alert('great success'); 
                                  },
                                  function(res) {
@@ -119,7 +119,6 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
 });
 
 app.controller("SignupModalCtrl", function($scope, $modalInstance, signup, RegistrationService) {
-  //TODO: alerts/validation errors
   //TODO: fix white at bottom of modal bc of form
 
   $scope.ok = function() {
@@ -133,17 +132,16 @@ app.controller("SignupModalCtrl", function($scope, $modalInstance, signup, Regis
 });
 
 app.controller("LoginModalCtrl", function($scope, $modalInstance, creds, AuthenticationService, Users) {
-  //TODO: alerts/validation errors
   //TODO: fix white at bottom of modal bc of form
 
-  $scope.$on('event:unauthorized', function() {
-    //$scope.alerts
-    //$modalInstance.open
-  });
+  // $scope.$on('event:unauthorized', function() {
+  //   //$scope.alerts
+  //   //$modalInstance.open
+  // });
 
   //TODO: consolidate and use same controller for modal & page?
   $scope.ok = function() {
-    //Users.query();
+    //TODO: client-side validation
     $modalInstance.close(creds);
   };
 
