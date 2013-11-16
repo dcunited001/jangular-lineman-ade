@@ -69,7 +69,8 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
                                    $scope.signupAlerts = _.flatten(
                                      _.map(res.errors, function(v,k) { 
                                        return _.map(v, function(msg) { 
-                                         return { type: "error", msg: k + " " + v};
+                                         return { type: "error", 
+                                                  msg: k + " " + msg };
                                        });
                                      }));
 
