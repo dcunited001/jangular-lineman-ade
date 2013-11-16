@@ -27,6 +27,7 @@ var app = angular.module("RailsStackApp",
     $urlRouterProvider.otherwise('/login');
 
     $stateProvider
+      //TODO: fix login page for mobile users?
       .state('login', {
         url: "/login",
         templateUrl: "angular/login.html",
