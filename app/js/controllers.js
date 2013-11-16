@@ -41,7 +41,7 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
   if ($scope.currentUser === undefined) {
     $scope.currentUser = SessionService.currentUser;
   }
-  $scope.loggedIn = AuthenticationService.isLoggedIn;
+  $scope.loggedIn = AuthenticationService.isLoggedIn();
 
   //TODO: refactor to SignupBtnCtrl, but $scope.signup is not passed when i do this
   $scope.signup = { username: '', email: '', password: '', passwordConfirmation: '' };
@@ -105,6 +105,7 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
       AuthenticationService.login(creds,
                                   function(res) {
                                     $scope.currentUser = SessionService.currentUser;
+                                    $scope.loggedIn = AuthenticationService.isLoggedIn();
                                   },
                                   function(res) {
                                     $scope.loginAlerts.push({ type: "error", msg: res.error });
