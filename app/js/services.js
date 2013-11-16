@@ -14,21 +14,23 @@ app.factory('AuthenticationService', function($http, SessionService) {
 
   // these routes map to stubbed API endpoints in config/server.js
   return {
-    login: function(credentials, success, error) {
+    login: function(creds, success, error) {
 
-      // this method could be used to call the API and set the user 
-      //   instead of taking it in the function params
-      //SessionService.currentUser = credentials.username;
-      
       return $http.post('/api/login.json', { 
-        user: credentials
-      }).then(success, error);
+        user: creds
+      }).then(function(res) {
+        SessionService.currentUser = creds.email;
+        success(res);
+      }, error);
     },
 
     logout: function(success, error) {
       return $http.post('/api/logout.json', { 
         format: 'json'
-      }).then(success, error);
+      }).then(function(res) {
+        SessionService.currentUser = null;
+        success(res)
+      }, error);
     },
 
     isLoggedIn: function () {
