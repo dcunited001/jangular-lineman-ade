@@ -71,11 +71,8 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
     
   };
 
-});
-
-app.controller("LoginBtnCtrl", function($scope, $modal, AuthenticationService) {
-  $scope.creds  = { username: '', password: '' };
-
+  //TODO: refactor to LoginBtnCtrl, but $scope.creds is not passed when i do this
+  $scope.creds  = { email: '', password: '' };
   $scope.openLoginModal = function() {
 
     var modalInstance = $modal.open({
@@ -104,11 +101,12 @@ app.controller("LoginBtnCtrl", function($scope, $modal, AuthenticationService) {
 });
 
 app.controller("SignupModalCtrl", function($scope, $modalInstance, signup, RegistrationService) {
-  //TODO: alerts
+  //TODO: alerts/validation errors
+  //TODO: fix white at bottom of modal bc of form
 
   $scope.ok = function() {
     //TODO: client-side validation
-    $modalInstance.close($scope.signup);
+    $modalInstance.close(signup);
   };
 
   $scope.cancel = function() {
