@@ -45,3 +45,14 @@ app.factory('SessionService', function () {
     currentUser: null
   };
 });
+
+app.factory('Users', function($resource) {
+  return $resource('/api/users', { format: 'json' });
+});
+
+ // .factory('Devices', ['$resource', function($resource){
+ //    return $resource('http://localhost\\:3000/devices/:deviceId',
+ //        {},
+ //        {update: {method:'PUT'}, isArray:false}
+ //        );
+ //  }]);
