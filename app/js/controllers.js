@@ -41,6 +41,7 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
 
   //TODO: refactor to SignupBtnCtrl, but $scope.signup is not passed when i do this
   $scope.signup = { username: '', email: '', password: '', passwordConfirmation: '' };
+  $scope.signupAlerts = [];
 
   $scope.openSignupModal = function() {
 
@@ -55,14 +56,22 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
     });
 
     modalInstance.result.then(function (signup) {
+      $scope.signupAlerts = [];
       RegistrationService.signup(signup, 
-                                 function(response) { 
-                                   //TODO: signup success callback: alert(response); 
+                                 function(res) { 
+                                   //TODO: signup success callback: 
+                                   alert(res); 
                                  },
-                                 function(response) {
-                                   if (response.status === 422) {
-                                     
-                                   }
+                                 function(res) {
+                                   //TODO: gotta be a better way to handle these errors
+                                   $scope.signupAlerts = _.flatten(
+                                     _.map(res.errors, function(v,k) { 
+                                       return _.map(v, function(msg) { 
+                                         return { type: "error", msg: k + " " + v};
+                                       });
+                                     }));
+
+                                   $scope.openSignupModal();
                                    //TODO: signup error callback: 
                                  });
     }, function (message) {
