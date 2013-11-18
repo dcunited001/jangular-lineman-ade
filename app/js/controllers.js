@@ -67,7 +67,7 @@ app.controller("NavbarCtrl", function($scope, $location, $modal, AuthenticationS
   };
 
   //TODO: refactor to LoginBtnCtrl, but $scope.creds is not passed when i do this
-  $scope.creds  = { email: '', password: '' };
+  $scope.creds  = { email: '', password: '' , remember_me: false};
   $scope.loginAlerts = [];
   $scope.openLoginModal = function() {
 
@@ -114,11 +114,6 @@ app.controller("SignupModalCtrl", function($scope, $modalInstance, signup, Regis
 
 app.controller("LoginModalCtrl", function($scope, $modalInstance, creds, AuthenticationService, Users) {
   //TODO: fix white at bottom of modal bc of form
-
-  // $scope.$on('event:unauthorized', function() {
-  //   //$scope.alerts
-  //   //$modalInstance.open
-  // });
 
   //TODO: consolidate and use same controller for modal & page?
   $scope.ok = function() {
