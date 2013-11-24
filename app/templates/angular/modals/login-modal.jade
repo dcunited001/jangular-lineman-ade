@@ -1,4 +1,4 @@
-form(ng-submit="ok()")
+form#login-modal(ng-submit="ok()")
   .modal-header
     h3 Log In
 
@@ -9,7 +9,7 @@ form(ng-submit="ok()")
     .row-fluid
       .span5: input(type="text", name="username", placeholder="Email", ng-model="creds.email", required)
       .span5: input(type="password", name="password", placeholder="Password", ng-model="creds.password", required)
-      .span2: input(type="checkbox", name="remember_me", ng-model="creds.remember_me") 
+      .span2: input(type="checkbox", name="remember_me", ng-model="creds.remember_me")
 
   .modal-footer
     .pull-right: button.btn.btn-primary(type='submit') Log In
