@@ -60,6 +60,7 @@ Role Based Auth for Angular
 
 Devise Auth with Rails/Angular
 
+- RECENT - http://rockyj.in/2013/11/04/angular_rails_2.html
 - http://jes.al/2013/08/authentication-with-rails-devise-and-angularjs/
 - http://technpol.wordpress.com/2013/09/23/angularjs-and-devise-authentication-with-a-rails-server/
 - https://github.com/jesalg/RADD
