@@ -1,0 +1,23 @@
+
+<form id="signup-modal" ng-submit="ok()">
+  <div class="modal-header">
+    <h3>Sign Up</h3>
+  </div>
+  <div class="modal-body">
+    <input type="text" name="email" placeholder="Email" ng-model="signup.email" required="required"/>
+    <input type="text" name="username" placeholder="Username" ng-model="signup.username" required="required"/>
+    <input type="password" name="password" placeholder="Password" ng-model="signup.password" required="required"/>
+    <input type="password" name="passwordConfirmation" placeholder="Confirm" ng-model="signup.passwordConfirmation" required="required"/>
+    <div class="row-fluid">
+      <alert ng-repeat="alert in signupAlerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div class="pull-right">
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    </div>
+    <div class="pull-left">
+      <button ng-click="cancel()" class="btn">Cancel</button>
+    </div>
+  </div>
+</form>
