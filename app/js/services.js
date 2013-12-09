@@ -16,7 +16,7 @@ app.factory('AuthenticationService', function($http, SessionService) {
   // these routes map to stubbed API endpoints in config/server.js
   return {
     login: function(creds, success, error) {
-      return $http.post('/api/login.json', { 
+      return $http.post(apiUrl + '/api/login.json', { 
         user: creds
       }).success(function(res) {
         SessionService.currentUser = creds.email;
@@ -28,7 +28,7 @@ app.factory('AuthenticationService', function($http, SessionService) {
     },
 
     logout: function(success, error) {
-      return $http.post('/api/logout.json', { 
+      return $http.post(apiUrl + '/api/logout.json', { 
         format: 'json'
       }).then(function(res) {
         SessionService.currentUser = null;
@@ -52,7 +52,7 @@ app.factory('SessionService', function () {
 });
 
 app.factory('Users', function($resource) {
-  return $resource('/api/users', { format: 'json' });
+  return $resource(apiUrl + '/api/users', { format: 'json' });
 });
 
  // .factory('Devices', ['$resource', function($resource){
