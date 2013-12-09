@@ -32,7 +32,7 @@ app.factory('AuthenticationService', function($http, SessionService) {
         format: 'json'
       }).then(function(res) {
         SessionService.currentUser = null;
-        success(res)
+        success(res);
       }, error);
     },
 
