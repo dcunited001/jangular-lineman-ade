@@ -37,6 +37,20 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
     common: ["jade", "ngtemplates"] // jade/ngtemplates runs in dist and dev
   },
 
+  pages: {
+    dev: {
+      context: {
+        apiUrl: "http://localhost:3000"
+      }
+    },
+    dist: {
+      context: {
+        // TODO: pull from env var for staging/production
+        apiUrl: "http://ng-rails-stack.herokuapp.com"
+      }
+    }
+  },
+
   // configuration for jade templates
   // - converts jade => html
   jade: {
