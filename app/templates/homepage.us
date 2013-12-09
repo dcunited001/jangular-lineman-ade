@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="RailsStackApp">
   <head>
+    <script type="text/javascript">
+      apiUrl = "<%= apiUrl %>";
+    </script>
 
     <title><%= pkg.name %></title>
     <link rel="stylesheet" type="text/css" href="<%= css %>" media="all" />
     <link rel="icon" type="image/png" href="/img/favicon.ico"/>
-
 
   </head>
   <body ng-cloak>
