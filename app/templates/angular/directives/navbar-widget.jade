@@ -8,22 +8,22 @@
     .nav-collapse.collapse(ng-switch="loggedIn")
       ul.nav(ng-switch-when="true")
         li(ng-class='{ active: isActive(\'/home\') }')
-          a(href='/home') Home
+          a(href='/#/home') Home
         li(ng-class='{ active: isActive(\'/users\') }')
-          a(href='/users') Users
+          a(href='/#/users') Users
         li(ng-class='{ active: isActive(\'/foo\') }')
-          a(href='/foo') Foo
+          a(href='/#/foo') Foo
         li(ng-class='{ active: isActive(\'/bar\') }')
-          a(href='/bar') Bar
+          a(href='/#/bar') Bar
         li(ng-class='{ active: isActive(\'/baz\') }')
-          a(href='/baz') Baz
+          a(href='/#/baz') Baz
       ul.nav(ng-switch-default)
         li(ng-class='{ active: isActive(\'/home\') }')
-          a(href='/home') Home
+          a(href='/#/home') Home
         li(ng-class='{ active: isActive(\'/features\') }')
-          a(href='/features') Features
+          a(href='/#/features') Features
         li(ng-class='{ active: isActive(\'/explore\') }')
-          a(href='/explore') Explore
+          a(href='/#/explore') Explore
     .pull-right(ng-if="loggedIn")
       .btn-group(user-profile-widget)
     .pull-right(ng-if="!(loggedIn)")

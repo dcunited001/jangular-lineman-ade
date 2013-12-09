@@ -22,7 +22,8 @@ var app = angular.module("RailsStackApp",
     // profile - /:username
     // account - /account
 
-    $locationProvider.html5Mode(true);
+    // TODO: enable pushstate (fix heroku lineman build pack)
+    // $locationProvider.html5Mode(true);
 
     $urlRouterProvider.otherwise('/login');
 
