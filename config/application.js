@@ -9,7 +9,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
 
   // api proxy server configuration to link up with rails-api
   server: {
-    pushState: true,
+    pushState: false, // TODO: enable pushstate (fix apache config in heroku lineman buildpack)
     apiProxy: {
       enabled: true,
       host: 'localhost',
