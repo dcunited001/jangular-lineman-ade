@@ -46,7 +46,8 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
     dist: {
       context: {
         // TODO: set production value
-        apiUrl: "<%= (process.env.LINEMAN_ENV == 'staging') ? 'http://ng-rails-stack.herokuapp.com' : '' %>" 
+        // TODO: fix node environment variables in heroku lineman buildpack
+        apiUrl: "<%= (process.env.LINEMAN_ENV == 'production') ? '' : http://ng-rails-stack.herokuapp.com' %>" 
       }
     }
   },
