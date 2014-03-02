@@ -8,10 +8,10 @@
   "dependencies": {
     "underscore": "1.5.2",
     "underscore.string": "2.3.3",
-    "angular": "1.2.0-rc.3",
-    "angular-cookies": "1.2.0-rc.3",
-    "angular-route": "1.2.0-rc.3",
-    "angular-resource": "1.2.0-rc.3",
+    "angular": "1.2.14",
+    "angular-cookies": "1.2.14",
+    "angular-route": "1.2.14",
+    "angular-resource": "1.2.14",
     "angular-ui-router": "0.2.0",
     "angular-bootstrap": "0.6.0"
   },
