@@ -29,7 +29,12 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
     ],
     app: [
       "app/js/app.js",
-      "app/js/**/*.js"
+      "app/js/**/*.js",
+
+      // TODO: appending the template-cache location is a hack
+      // - files.ngtemplates.dest no longer resolves in application.js
+      // - i think this is because of the lineman-angular plugin changes
+      "generated/angular/template-cache.js"
     ]
   },
 

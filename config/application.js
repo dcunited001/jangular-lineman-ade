@@ -100,7 +100,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
   // this configuration orders the template inclusion _after_ the app level module
   concat: {
     js: {
-      src: ["<banner:meta.banner>", "<%= files.js.vendor %>", "<%= files.coffee.generated %>", "<%= files.js.app %>", "<%= files.ngtemplates.dest %>"],
+      src: ["<banner:meta.banner>", "<%= files.js.vendor %>", "<%= files.coffee.generated %>", "<%= files.js.app %>"],
       separator: ";"
     }
   },
